@@ -21,7 +21,7 @@ public class BloodBankID_Generator implements IdentifierGenerator{
         try {
             Statement statement=connection.createStatement();
 
-            ResultSet rs=statement.executeQuery("select count(blood_bankid) as Id from Blood_Bank");
+            ResultSet rs=statement.executeQuery("select count(blood_bankid) as Id from blood_bank");
         	//String q3="SELECT count(*) FROM vmanagement2.jobcard;";
         	//Statement st=con.createStatement();
         	//ResultSet rs2 = st.executeQuery(q3);
