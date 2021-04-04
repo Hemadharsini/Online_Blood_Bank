@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,7 @@ import com.example.dao.donordao;
 import com.example.model.BloodBankModel;
 import com.example.model.BloodDonorModel;
 import com.example.model.UserModel;
-
+@CrossOrigin(origins="http://localhost:8081")
 @RestController
 public class BloodDonorController {
 	@Autowired
@@ -66,11 +67,11 @@ public class BloodDonorController {
 	}
 	
 	@PostMapping("/admin/addDonor")
-	public BloodDonorModel addDonar(@RequestBody BloodDonorModel bbm)
+	public String addDonar(@RequestBody BloodDonorModel bbm)
 	{
 		//System.out.print(bbm.getAddress()+" "+bbm.getAvailability());
 		repo.save(bbm);
-		return bbm;
+		return "Added";
 	}
 	@DeleteMapping("/admin/donor/{id}")
 	public String removeBloodSample (@PathVariable String id)
@@ -100,7 +101,7 @@ public class BloodDonorController {
 		{
 			System.out.println(bbm1.toString());
 			repo.save(bbm);
-			//repo.delete(bbm1);
+			
 		}
 		else
 		{

@@ -100,6 +100,12 @@ public class BloodBankModel {
 		public void setAddress(String address) {
 			Address = address;
 		}
+		public Date getCreatedOn() {
+			return createdOn;
+		}
+		public void setCreatedOn(Date createdOn) {
+			this.createdOn = createdOn;
+		}
 		@Override
 		public String toString() {
 			return "BloodBankModel [bloodBankID=" + bloodBankID + ", bloodGroup=" + bloodGroup + ", bloodPressure="

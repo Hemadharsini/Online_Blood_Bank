@@ -14,7 +14,7 @@ public class LoginModel {
 	@Id
 	@GenericGenerator(name = "user_id", strategy = "com.example.model.idgenerator.User_Id")
 	@GeneratedValue(generator = "user_id")  
-	@JsonProperty
+	//@JsonProperty
 	private String UserId;
 	//private String email;
 	private String password;

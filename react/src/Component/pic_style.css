@@ -1,0 +1,17 @@
+.photo {
+    height: 200px;
+    width: 200px;
+    align-items: center;
+    align-content: center;
+   
+  }
+
+  
+  .vl
+  {
+    border-left: 1px solid white;
+    height: 50px;
+    width: 5px;
+  }
+
+  

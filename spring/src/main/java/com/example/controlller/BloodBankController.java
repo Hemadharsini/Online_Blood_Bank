@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.dao.OnlineBloodBankDao;
 import com.example.model.BloodBankModel;
 
+
+@CrossOrigin(origins="http://localhost:8081")
 @RestController
+
 public class BloodBankController {
 	@Autowired
 	OnlineBloodBankDao repo;
@@ -37,7 +41,7 @@ public class BloodBankController {
 		/*System.out.println("Fffffffff");
 		BloodBankModel bbm = new BloodBankModel();
 		//bbm.setBloodBankID("bloodbankid1");
-		bbm.setBloodGroup("A1B +ve");
+		bbm.setBloodGroup("B+ve");
 		bbm.setAddress("KKM Hospital");
 		bbm.setAvailability(1);
 		bbm.setBloodPressure("11.5");
@@ -45,6 +49,7 @@ public class BloodBankController {
 		bbm.setPHLevel("11.4");
 		bbm.setQuantity(10);
 		repo.save(bbm);*/
+		System.out.print("In all");
 		return repo.findAll();
 		
 	}
@@ -60,16 +65,17 @@ public class BloodBankController {
 	@ResponseBody
 	public List<BloodBankModel>Get_All_Sample_by_group(@PathVariable("group") String bloodGroup)
 	{
+		System.out.print(bloodGroup);
 		
 		return repo.findBybloodGroup(bloodGroup);
 		
 	}
 	@PostMapping("/admin/addSample")
-	public BloodBankModel addBlood(@RequestBody BloodBankModel bbm)
+	public String addBlood(@RequestBody BloodBankModel bbm)
 	{
 		System.out.print(bbm.getAddress()+" "+bbm.getAvailability());
 		repo.save(bbm);
-		return bbm;
+		return "Added";
 	}
 	@DeleteMapping("/admin/sample/{id}")
 	public String removeBloodSample (@PathVariable String id)
@@ -97,6 +103,7 @@ public class BloodBankController {
 		if(bbm1 != null)
 		{
 			System.out.println(bbm1.toString());
+			
 			repo.save(bbm);
 			//repo.delete(bbm1);
 		}
