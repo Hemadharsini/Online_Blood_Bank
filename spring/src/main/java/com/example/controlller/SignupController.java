@@ -16,7 +16,7 @@ import com.example.model.Login;
 import com.example.model.LoginModel;
 import com.example.model.SignUp;
 import com.example.model.UserModel;
-@CrossOrigin(origins="http://localhost:8081")
+@CrossOrigin(origins="https://8081-badacebeffecadfbbbbcadddaaafdfbabacbdeb.examlyiopb.examly.io")
 @RestController
 public class SignupController {
 	@Autowired
@@ -26,9 +26,9 @@ public class SignupController {
 	@ResponseBody
 	List<LoginModel> view_all()
 	{
-		LoginModel lm = new LoginModel();
+		//LoginModel lm = new LoginModel();
 		
-		UserModel um = new UserModel();
+		/*UserModel um = new UserModel();
 		um.setActive(true);
 		um.setEmail("admin@gmail.com");
 		um.setFname("admin");
@@ -39,7 +39,7 @@ public class SignupController {
 		lm.setUserId("admin");
 		lm.setPassword("admin");
 		lm.setUser_details(um);
-		repo.save(lm);
+		repo.save(lm);*/
 		
 		return repo.findAll();
 	}
