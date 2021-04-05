@@ -1,5 +1,3 @@
-package com.example.controlller;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -18,7 +16,7 @@ import com.example.dao.donordao;
 import com.example.model.BloodBankModel;
 import com.example.model.BloodDonorModel;
 import com.example.model.UserModel;
-@CrossOrigin(origins="http://localhost:8081")
+@CrossOrigin(origins="https://8081-badacebeffecadfbbbbcadddaaafdfbabacbdeb.examlyiopb.examly.io")
 @RestController
 public class BloodDonorController {
 	@Autowired
