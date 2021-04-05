@@ -1,5 +1,7 @@
 package com.example.controlller;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +29,17 @@ public class BloodBankController {
 	@Autowired
 	OnlineBloodBankDao repo;
 	
+	
+	/*public BloodBankController() {
+		// TODO Auto-generated constructor stub
+		//Calendar cal = Calendar.getInstance();
+		//Date today = cal.getTime();
+		//cal.add(Calendar.DATE, -90);
+		//Date expiry = cal.getTime();
+		//System.out.println(expiry);
+		//repo.deleteBycreatedOn(expiry);
+		//repo.deleteBycreated_on(expiry);
+	}*/
 	/*@PostMapping("/admin/addSample")
 	@ResponseBody
 	public BloodBankModel Add_Sample(BloodBankModel bbm)
@@ -34,6 +47,12 @@ public class BloodBankController {
 		repo.save(bbm);
 		return bbm;
 	}*/
+	/*Calendar cal = Calendar.getInstance();
+	Date today = cal.getTime();
+	cal.add(Calendar.DATE, -90);
+	Date expiry = cal.getTime();
+	System.out.println(expiry);
+	*/
 	@GetMapping("/sample")
 	@ResponseBody
 	public List<BloodBankModel> showBloodSample()

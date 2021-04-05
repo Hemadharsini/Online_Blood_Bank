@@ -22,7 +22,7 @@ const Admin_Sample_viewmore_modal = (props)=> {
     
   }
 
-  const[BloodBankID,setBloodBankID] = useState(props.data.bloodBankID)
+  /*const[BloodBankID,setBloodBankID] = useState(props.data.bloodBankID)
   const[BloodGroup,setBloodGroup] = useState(props.data.bloodGroup)
   const[Quantity,setQuantity] = useState(props.data.quantity)
   const[Mobile,setMobile] = useState(props.data.Mobile)
@@ -38,8 +38,26 @@ const Admin_Sample_viewmore_modal = (props)=> {
   const getmob = (event) =>{setMobile(event.target.value)}
   const getadd = (event) =>{setAddress(event.target.value)}
   const getph = (event) =>{setPhlevel(event.target.value)}
-  const getpres = (event) =>{setPressure(event.target.value)}
+  const getpres = (event) =>{setPressure(event.target.value)}*/
   //const[Phlevel,setPhlevel] = useState()
+
+ var BloodBankID = (props.data.bloodBankID)
+  var BloodGroup = (props.data.bloodGroup)
+  var Quantity = (props.data.quantity)
+  var Mobile = (props.data.mobile)
+  var Address = (props.data.address)
+  var Phlevel = (props.data.phlevel)
+  var Pressure = (props.data.bloodPressure)
+  var Created= (props.data.createdOn)
+  var Availability = (props.data.availability)
+
+  const getbid = () =>{BloodBankID = (props.data.bloodBankID)}
+  const getbg = (event) =>{BloodGroup = (event.target.value)}
+  const getq = (event) =>{Quantity = (event.target.value)}
+  const getmob = (event) =>{Mobile = (event.target.value)}
+  const getadd = (event) =>{ Address = (event.target.value)}
+  const getph = (event) =>{Phlevel= (event.target.value)}
+  const getpres = (event) =>{Pressure = (event.target.value)}
     /*if(props.data.bloodBankID !== 'undefined' )
     {
         setBloodBankID(props.data.bloodBankID)
@@ -118,9 +136,9 @@ const Admin_Sample_viewmore_modal = (props)=> {
  {
      //console.log(this.BloodBankID)
      console.log("In update")
-     setBloodBankID(props.data.bloodBankID)
+     BloodBankID = (props.data.bloodBankID)
      //setBloodGroup(props.data.bloodGroup)
-     if(typeof BloodBankID === 'undefined')
+    /* if(typeof BloodBankID === 'undefined')
      {
          setBloodBankID(props.data.bloodBankID)
      }
@@ -165,14 +183,14 @@ const Admin_Sample_viewmore_modal = (props)=> {
         setAvailability(0)
        }
         
-     }
+     }*/
      if(parseInt(Quantity)>0)
      {
-       setAvailability(1);
+       Availability = (1);
      }
      else
      {
-       setAvailability(0);
+       Availability = (0);
      }
      
      
