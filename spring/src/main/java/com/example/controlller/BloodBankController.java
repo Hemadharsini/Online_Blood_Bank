@@ -1,5 +1,3 @@
-package com.example.controlller;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +20,7 @@ import com.example.dao.OnlineBloodBankDao;
 import com.example.model.BloodBankModel;
 
 
-@CrossOrigin(origins="http://localhost:8081")
+@CrossOrigin(origins="https://8081-badacebeffecadfbbbbcadddaaafdfbabacbdeb.examlyiopb.examly.io")
 @RestController
 
 public class BloodBankController {
@@ -69,6 +67,7 @@ public class BloodBankController {
 		bbm.setQuantity(10);
 		repo.save(bbm);*/
 		System.out.print("In all");
+		//repo.deletebyCreatedOn();
 		return repo.findAll();
 		
 	}
