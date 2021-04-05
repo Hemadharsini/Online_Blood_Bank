@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = "http://localhost:8080/sample";
-const Donor_URL = "http://localhost:8080/donor";
+const API_BASE_URL = "https://8080-badacebeffecadfbbbbcadddaaafdfbabacbdeb.examlyiopb.examly.io/sample";
+const Donor_URL = "https://8080-badacebeffecadfbbbbcadddaaafdfbabacbdeb.examlyiopb.examly.io/donor";
 
 
 class BloodbankService_User   {
